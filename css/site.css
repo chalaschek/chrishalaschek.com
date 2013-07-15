@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Fauna One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Fauna One'), local('FaunaOne-Regular'), url(http://themes.googleusercontent.com/static/fonts/faunaone/v1/cSd7NBXNFQWK4oX1706dY7O3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+
+
+@font-face {
+  font-family: 'Mr Dafoe';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Mr Dafoe Regular'), local('MrDafoe-Regular'), url(http://themes.googleusercontent.com/static/fonts/mrdafoe/v2/F1AgEicuA-Vh7KAhE4UhjXYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +22,7 @@
 
 html, body {
   height: 100%;
-  font-family: 'PT Sans Caption', "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Fauna One', "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
@@ -23,6 +39,7 @@ html, body {
   text-align: center;
 }
 
+
 .justify{
   text-align: justify;
 }
@@ -35,46 +52,31 @@ html, body {
 
 
 .me{
-  background-color: #f6f6f6;
+  /*background-color: #f6f6f6;*/
+  position: relative;
+  top: 15%;
 }
 
-.me pre{
+.me .title{
   color: #333;
   text-align: center;
   font-size:50px;
   font-family: "Mr Dafoe";
-  white-space:pre;
   line-height:50px;
-  border:none;
-  background-color:transparent;
-  margin:0;
-  padding:10px 10px 10px 0px;
-}
-
-.arrow{
-  cursor: pointer;
-  display: inline-block;
-  width: 37px;
-  height: 37px;
-  background-image: url('../img/arrow-sprite.png');
-  background-position: 37px 0px;
-  margin-top: 50px;
-}
-
-
-
-.arrow:hover{
-  background-position: 0px 0px;
+  margin-bottom: 30px;
 }
 
 .social-icons{
   height: 60px;
+  margin-top: 10px;
 }
 
 .social {
   height: 60px;
   width: 60px;
   margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
   cursor: pointer;
   display: inline-block;
   background-image: url('../img/social-icons.png');

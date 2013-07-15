@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+html, body {
+  height: 100%;
+  font-family: 'PT Sans Caption', "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #eee;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);  
+
+}
+
+.center{
+  text-align: center;
+}
+
+.justify{
+  text-align: justify;
+}
+
+.section{
+  padding-top: 100px;
+  padding-bottom: 100px;
+  overflow: auto;
+}
+
+
+.me{
+  background-color: #f6f6f6;
+}
+
+.me pre{
+  color: #333;
+  text-align: center;
+  font-size:50px;
+  font-family: "Mr Dafoe";
+  white-space:pre;
+  line-height:50px;
+  border:none;
+  background-color:transparent;
+  margin:0;
+  padding:10px 10px 10px 0px;
+}
+
+.arrow{
+  cursor: pointer;
+  display: inline-block;
+  width: 37px;
+  height: 37px;
+  background-image: url('../img/arrow-sprite.png');
+  background-position: 37px 0px;
+  margin-top: 50px;
+}
+
+
+
+.arrow:hover{
+  background-position: 0px 0px;
+}
+
+.social-icons{
+  height: 60px;
+}
+
+.social {
+  height: 60px;
+  width: 60px;
+  margin-top: 20px;
+  cursor: pointer;
+  display: inline-block;
+  background-image: url('../img/social-icons.png');
+  background-position: 0px 0px;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.social:hover{
+  opacity: .8;
+}
+
+.social.twitter{
+  background-position: -60px 0px;
+}
+
+.social.github{
+  background-position: -180px 0px;
+}
+
+.social.facebook{
+  background-position: -120px 0px;
+}
+
+.social.cv{
+  background-position: -240px 0px;
+}
+/*
+.social.twitter:hover{
+  background-position: -60px -60px;
+}
+
+.social.github:hover{
+  background-position: -180px -60px;
+}
+
+.social.facebook:hover{
+  background-position: -120px -60px;
+}
+
+.social.linkedin:hover{
+  background-position: 0px -60px;
+}
+
+.social.cv:hover{
+  background-position: -240px -60px;
+}*/
+
+
+
+
+

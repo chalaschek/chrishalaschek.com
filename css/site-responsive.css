@@ -1,0 +1,77 @@
+/* Large desktop */
+@media (min-width: 1200px) {
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { 
+
+}
+
+@media (max-width: 979px) { 
+  .me pre{
+    font-size:50px;
+    line-height:50px;
+  }
+}
+
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+  html, body{
+    font-size: 14px;
+    line-height: 16px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .container{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .me{
+    top: 15px;
+  }
+
+  .section{
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .me pre{
+    font-size:40px;
+    line-height:40px;
+  }
+
+  /*
+  .social {
+    margin-top: 10px;
+    width: 40px;
+    height: 40px;
+    background-image: url('../img/social-icons-small.png');
+  }
+
+  .social.twitter{
+    background-position: -40px 0px;
+  }
+
+  .social.github{
+    background-position: -120px 0px;
+  }
+
+  .social.facebook{
+    background-position: -80px 0px;
+  }
+
+  .social.cv{
+    background-position: -160px 0px;
+  }
+  */
+
+
+}

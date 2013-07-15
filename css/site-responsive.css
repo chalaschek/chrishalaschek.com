@@ -8,7 +8,11 @@
 }
 
 @media (max-width: 979px) { 
-  .me pre{
+  .me{
+    top: 20%;
+  }
+
+  .me .title{
     font-size:50px;
     line-height:50px;
   }
@@ -29,13 +33,14 @@
     padding-right: 20px;
   }
 
-  .me{
-    top: 15px;
-  }
 
   .section{
     padding-top: 50px;
     padding-bottom: 50px;
+  }
+
+  .me{
+    top: 20%;
   }
 
 
@@ -43,12 +48,14 @@
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
-  .me pre{
+  .me{
+    top: 0px;
+  }
+  .me .title{
     font-size:40px;
     line-height:40px;
   }
 
-  /*
   .social {
     margin-top: 10px;
     width: 40px;
@@ -71,7 +78,6 @@
   .social.cv{
     background-position: -160px 0px;
   }
-  */
 
 
 }

@@ -1,3 +1,4 @@
+
 /* Large desktop */
 @media (min-width: 1200px) {
 }
@@ -79,5 +80,39 @@
     background-position: -160px 0px;
   }
 
+}
 
+
+/* Retina icons */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+ only screen and (-o-min-device-pixel-ratio: 3/2),
+ only screen and (min--moz-device-pixel-ratio: 1.5),
+     only screen and (min-device-pixel-ratio: 1.5) {
+
+  .social {
+    background-image: url('../img/social-icons@2x.png');
+    -moz-background-size:240px 60px;
+    -ie-background-size:240px 60px;
+    -o-background-size:240px 60px;
+    -webkit-background-size:240px 60px;
+    background-size:240px 60px;
+  }
+}
+
+
+/* Retina icons */
+@media only screen and (max-width: 480px),
+ only screen and (-webkit-min-device-pixel-ratio: 1.5),
+ only screen and (-o-min-device-pixel-ratio: 3/2),
+ only screen and (min--moz-device-pixel-ratio: 1.5),
+     only screen and (min-device-pixel-ratio: 1.5) {
+
+  .social {
+    background-image: url('../img/social-icons@2x.png');
+    -moz-background-size:160px 40px;
+    -ie-background-size:160px 40px;
+    -o-background-size:160px 40px;
+    -webkit-background-size:160px 40px;
+    background-size:160px 40px;
+  }
 }

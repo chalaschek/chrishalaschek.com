@@ -65,7 +65,7 @@
       sideplay: {
         name: "Side Play",
         what: "Web-based second screen app for real-time picks and predictions",
-        role: "Tech Lead (CTO &amp; Co-Found @ HashGo)",
+        role: "Tech Lead (CTO &amp; Co-Founder @ HashGo)",
         tech: "Backbone.js, Websockets, Node.js, Redis, MongoDB, AWS",
         status: "Internal proof-of-concept",
         images: ["./img/sideplay/sp1.png", "./img/sideplay/sp2.png", "./img/sideplay/sp3.png", "./img/sideplay/sp4.png", "./img/sideplay/sp5.png", "./img/sideplay/sp6.png", "./img/sideplay/sp7.png", "./img/sideplay/sp8.png"]
@@ -84,7 +84,7 @@
       rpt: {
         name: "Rock Paper Thing",
         what: "Web-based version of Rock Paper Scissors...and then some",
-        role: "Tech Lead (CTO &amp; Co-Found @ HashGo)",
+        role: "Tech Lead (CTO &amp; Co-Founder @ HashGo)",
         tech: "CSS3, Backbone.js, Node.js, MongoDB, AWS",
         status: "Internal proof-of-concept",
         images: ["./img/rpt/rpt1.png", "./img/rpt/rpt2.png", "./img/rpt/rpt3.png", "./img/rpt/rpt4.png", "./img/rpt/rpt5.png", "./img/rpt/rpt6.png", "./img/rpt/rpt7.png", "./img/rpt/rpt8.png", "./img/rpt/rpt9.png", "./img/rpt/rpt10.png", "./img/rpt/rpt11.png", "./img/rpt/rpt12.png"]

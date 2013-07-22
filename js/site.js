@@ -37,7 +37,7 @@
       trendwars: {
         name: "Trend Wars",
         what: "iOS &amp; Android game to attack/defend things trending on Twitter",
-        role: "Tech Lead (CTO &amp; Co-Found @ HashGo)",
+        role: "Tech Lead (CTO &amp; Co-Founder @ HashGo)",
         tech: "Unity3D, Node.js, Redis, MongoDB, AWS",
         status: "Launching August 2013",
         link: "http://trendwars.com",
@@ -83,7 +83,7 @@
 
       rpt: {
         name: "Rock Paper Thing",
-        what: "Web-based version of Rock Paper Scissors...and then some.",
+        what: "Web-based version of Rock Paper Scissors...and then some",
         role: "Tech Lead (CTO &amp; Co-Found @ HashGo)",
         tech: "CSS3, Backbone.js, Node.js, MongoDB, AWS",
         status: "Internal proof-of-concept",

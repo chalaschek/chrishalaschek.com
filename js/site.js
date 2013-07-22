@@ -2,6 +2,7 @@
   jQuery.fn.exists = function(){return this.length>0;}
 
   $(document).ready(function(){
+
     $('body,html').bind('scroll mousedown wheel DOMMouseScroll mousewheel keyup', function(e){
       if ( e.which > 0 || e.type == "mousedown" || e.type == "mousewheel"){
         $("html,body").stop();
@@ -184,11 +185,21 @@
         newDetails.hide();
 
         // remove old content
+        var top = $(window).scrollTop();
+
         wrapper.children().remove();
 
         // inject new content
         wrapper.append( newDetails );
-        newDetails.fadeIn(duration, function(){});
+        newDetails.fadeIn(duration, function(){
+          if(!isSingleColumnView()){
+            $.scrollTo(top, {
+              duration: 500,
+              easing: "easeOutExpo",
+              axis: "y"
+            });
+          }
+        });
         // init carousel
         initCarousel(newDetails);
       }else{

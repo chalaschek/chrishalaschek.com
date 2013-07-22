@@ -8,14 +8,28 @@
       }
     });
 
-    $(".project").hover(function(){
-      var el = $(this);
-      el.find(".info").fadeIn();
-      //el.find(".info").css("display", "block");
-    }, function(){
-      var el = $(this);
-      el.find(".info").fadeOut();
-    });
+    function isSingleColumnView(){
+      return $(window).width() <= 480;
+    }
+
+    // handle info hover for projects
+    if(!isSingleColumnView()){
+      $(".project").hover(function(){
+        var el = $(this);
+        el.find(".info").fadeIn();
+        // auto fade out if touch enableo
+        if(Modernizr.touch){
+          setTimeout(function(){
+            el.find(".info").fadeOut();
+          }, 2000);
+        }
+        //el.find(".info").css("display", "block");
+      }, function(){
+        var el = $(this);
+        el.find(".info").fadeOut();
+      });
+    }
+
 
 
     var projects = {
@@ -25,6 +39,7 @@
         role: "Tech Lead (CTO &amp; Co-Found @ HashGo)",
         tech: "Unity3D, Node.js, Redis, MongoDB, AWS",
         status: "Launching August 2013",
+        link: "http://trendwars.com",
         images: ["./img/trendwars/tw1.jpg", "./img/trendwars/tw2.jpg", "./img/trendwars/tw3.jpg", "./img/trendwars/tw4.jpg", "./img/trendwars/tw5.jpg"]
       },
 
@@ -33,6 +48,7 @@
         what: "Web-based investment research and portfolio management platform",
         role: "Tech Lead (CTO @ Clados)",
         tech: "EXT-JS, Play Framework, Java, RDF triple store + custom inference algos, AWS",
+        link: "http://clados.com",
         status: "Internal application"
       },
 
@@ -41,6 +57,7 @@
         what: "Expressive Syndication on the Web",
         role: "Doctoral Student (University of Maryland)",
         tech: "OWL, Tableau reasoning alogrithms, Java",
+        link: "http://drum.lib.umd.edu/bitstream/1903/7755/1/umi-umd-5037.pdf",
         status: "Published"
       },
 
@@ -59,6 +76,7 @@
         role: "Advisor @ Open Data Registry",
         tech: "Backbone.js, Node.js, RDF triple store",
         status: "Live",
+        link: "http://opendataregistry.com/",
         images: ["./img/odr1.png"]
       },
 
@@ -89,7 +107,13 @@
         "  </div>" +
         "  <div class=\"entry\">" +
         "    <div class=\"header\">Status:</div>" +
-        "    <div class=\"value\"><%=status%></div>" +
+        "    <div class=\"value\">" +
+        "    <%if(typeof link !='undefined'){%>" + 
+        "       <a href='<%=link%>' target='_blank'><%=status%></a>" + 
+        "    <%}else{%>" +
+        "     <%=status%>" +
+        "    <%}%>" +
+        "      </div>" +
         "  </div>" +
         "  <%if(typeof images !='undefined' && images.length > 0){%>" +
         "  <div id='slider' class='swipe'>" +
@@ -118,11 +142,6 @@
     var template = _.template(projectTemplate);
 
 
-    function isSingleColumnView(){
-      return $(window).width() <= 480;
-    }
-
-
     function initCarousel(parent){
       // pure JS
       var slider = parent.find("#slider");
@@ -131,12 +150,14 @@
         window.mySwipe = Swipe(slider[0], {
           //continuous: true,
           callback: function(pos) {
-            bullets.removeClass("on");
-            $(bullets[pos]).addClass("on");
+            setTimeout(function(){
+              bullets.removeClass("on");
+              $(bullets[pos]).addClass("on");
+            }, 100);
           }
         });
 
-        $("nav li").click(function(){
+        $("nav li").tap(function(){
           window.mySwipe.slide($(this).attr("data-idx"));
         });
 
@@ -218,7 +239,7 @@
       showProjectDetails(wrapper, id);
     }
 
-    $(".project").click(function(){
+    $(".project").tap(function(){
       projectClickHandler($(this));
     });
 

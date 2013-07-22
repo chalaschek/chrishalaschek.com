@@ -51,18 +51,208 @@ html, body {
 }
 
 
-.me{
+.section-me{
   background-color: #f6f6f6;
 }
 
-.me .title{
+.section-me .title{
   color: #333;
   text-align: center;
+  /*font-family: "Mr Dafoe";*/
+  font-family: "Bigshot One";
   font-size:50px;
-  font-family: "Mr Dafoe";
   line-height:50px;
   margin-bottom: 30px;
 }
+
+
+.section-projects{
+  background-color: #eee;
+  border-top: 1px solid #F0F0F0;
+  padding-bottom: 60px;
+}
+
+.section-projects .title{
+  color: #333;
+  font-size:30px;
+  line-height:30px;
+  font-family: "Bigshot One";
+  margin-bottom: 20px;
+}
+
+.projects{
+  position: relative;
+  overflow: auto;
+}
+
+.project{
+  float: left;
+  width: 33.333333333%;
+  /*
+  margin: 5px;
+  width: 236.6px;
+  */
+  height: 200px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+
+.active-project{
+  height: auto;
+  display: none;
+  background-color: #333;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.active-project .details{
+  font-size: 14px;
+  position: relative;
+}
+
+.active-project .name, .active-project .entry{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.active-project .name{
+  font-weight: 900;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.active-project .entry{
+  height: auto;
+  overflow: auto;
+  position: relative;
+  line-height: 20px;
+  margin-bottom: 2px;
+}
+.active-project .entry .header{
+  position: absolute;
+  left: 0;
+  color: #AAAAAA;
+  padding-left: 10px;
+}
+
+.active-project .entry .value{
+  margin-left: 60px;
+}
+
+
+.project .details{
+  display: none;
+}
+
+.project .info{
+  height: 30px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: left;
+  color: #fff;
+  font-size: 14px;
+  display: none;
+}
+
+.project .info .back{
+  height: 30px;
+  width: 100%;
+  background-color: #333;
+  opacity: .7;
+  position: absolute;
+  bottom: 0;
+}
+
+.project .info .name, .project .info .role{
+  position: relative;
+  z-index: 10;
+  margin-top: 4px;
+}
+
+.project .info .name{
+  float: left;
+  padding-left: 5px;
+}
+
+.project .info .role{
+  float: right;
+  padding-right: 5px;
+}
+
+
+
+.project-trendwars{
+  margin-left: 0px;
+  background-color: #FFFCCC;
+}
+
+.project-thesis{
+  margin-right: 0px;
+  background-color: #B0B0B0;
+}
+
+.project-clados{
+  background-color: #fff;
+  text-align: right;
+}
+
+.project-sideplay{
+  margin-left: 0px;
+  background-color: #CCFFFF;
+}
+
+.project-odr{
+  background-color: #469BAD;
+}
+
+.project-rpt{
+  margin-right: 0px;
+  background-color: #ffcc66;
+}
+
+
+.project-trendwars img{
+  width: 90%;
+  position: relative;
+  top: 50px;
+}
+
+
+.project-clados img{
+  position: relative;
+}
+
+.project-thesis img{
+  width: 50%;
+  position: relative;
+  top: 40px;
+}
+
+
+.project-sideplay img{
+  position: relative;
+  top: 25px;
+}
+
+.project-odr img{
+  position: relative;
+  top: 20px;
+  height: 90%;
+}
+
+.project-rpt img{
+  position: relative;
+  top: 40px;
+  width: 90%;
+}
+
+
+
+/* Social Icons */
 
 .social-icons{
   height: 60px;

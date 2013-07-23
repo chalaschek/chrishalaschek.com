@@ -14,6 +14,38 @@
     }
 
 
+
+    $(window).scroll(function(){
+      console.log("--" + $(this).scrollTop());
+      console.log();
+      
+      if($(this).scrollTop() > $(".section-pubs").position().top + parseInt($(".section-pubs").css("padding-top").replace("px", "")) ){
+        $(".section-pubs .title").css({position: "fixed", top: 0, width: "inherit", background: "#fff", "padding-top": 10});
+      }else{
+        $(".section-pubs .title").css({position: "relative", top: 0});
+      }
+    });
+
+    
+    var updatePos = function () {
+      var el = $(".me-wrap");
+      var width = $(window).width();
+      var height = $(window).height();
+      var left = Math.max(0, (width / 2) - (el.width() / 2)) + "px";
+      var top = Math.max(0, (height / 2) - (el.height() / 2)) + "px";
+      el.css("position","fixed").css("left", left).css("top", top);
+      //el.css({"padding-top": height/2});
+    }; 
+
+    $(window).resize(updatePos);
+    updatePos();
+
+
+    $(".section-pubs").css({"padding-top" : ($(window).height()-$(".section-projects").height())/2});
+
+
+
+
     // handle info hover for projects
     if(!isSingleColumnView()){
       $(".project").hover(function(){

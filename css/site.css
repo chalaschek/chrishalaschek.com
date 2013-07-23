@@ -51,19 +51,37 @@ html, body {
   text-align: justify;
 }
 
+.page-wrap{
+  height: 100%;
+  position: relative;
+  overflow: visible;
+}
+
 .section{
   padding-top: 120px;
   padding-bottom: 120px;
+  z-index: 15;
 }
 
 
 .section-me{
   background-color: #f6f6f6;
   border-bottom: 1px solid #D9D9D9;
-  padding-top: 220px;
-  padding-bottom: 220px;
+  padding-top: 0;
+  padding-bottom: 0px;
+  height: 100%;
+  min-height: 100%;
+  position: relative;
 }
 
+.me-wrap{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  overflow: visible;
+}
 
 
 .section .title{
@@ -268,6 +286,7 @@ html, body {
   background-color: #fff;
   border-top: 1px solid #F0F0F0;
   position: relative;
+  padding-top: 0;
 }
 
 

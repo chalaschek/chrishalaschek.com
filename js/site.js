@@ -13,12 +13,13 @@
       return $(window).width() <= 480;
     }
 
+
     // handle info hover for projects
     if(!isSingleColumnView()){
       $(".project").hover(function(){
         var el = $(this);
         el.find(".info").fadeIn();
-        // auto fade out if touch enableo
+        // auto fade out if touch enabled
         if(Modernizr.touch){
           setTimeout(function(){
             el.find(".info").fadeOut();
@@ -149,7 +150,8 @@
       if(slider.exists()){
         var bullets = parent.find("#position li");
         window.mySwipe = Swipe(slider[0], {
-          //continuous: true,
+          continuous: true,
+          auto: 3000,
           callback: function(pos) {
             setTimeout(function(){
               bullets.removeClass("on");
@@ -167,41 +169,49 @@
 
 
     function showProjectDetails(wrapper, projectId){
-      var duration = 500;
+      var slideDuration = 500;
+      var fadeDuration = 750;
 
       // slide down method
       function slideDown(){
         wrapper.addClass("open");
         var newDetails  = $(template(projects[projectId]));
         wrapper.append( newDetails );
-        wrapper.slideDown(duration, function(){});
-        initCarousel(newDetails)
+        wrapper.slideDown(slideDuration, function(){});
+        setTimeout(function(){
+          initCarousel(newDetails);
+        }, 100);
       }
 
       // check if there is already a section
       if(wrapper.hasClass("open")){
+
         // init new content
         var newDetails  = $(template(projects[projectId]));
         newDetails.hide();
-
+        // force height
+        var height = wrapper.height();
+        //wrapper.height(height);
+        wrapper.css({height: "auto"});
+        var childs = wrapper.children();
         // remove old content
-        var top = $(window).scrollTop();
-
-        wrapper.children().remove();
-
-        // inject new content
-        wrapper.append( newDetails );
-        newDetails.fadeIn(duration, function(){
-          if(!isSingleColumnView()){
-            $.scrollTo(top, {
-              duration: 500,
-              easing: "easeOutExpo",
-              axis: "y"
-            });
-          }
+        childs.fadeOut(fadeDuration, function(){
+          childs.remove();
+          // inject new content
+          wrapper.append( newDetails );
+          // fade in new content
+          newDetails.fadeIn(fadeDuration, function(){});
+          // init carousel
+          initCarousel(newDetails);
         });
-        // init carousel
-        initCarousel(newDetails);
+
+        /*
+        wrapper.slideUp(slideDuration, function(){
+          wrapper.children().remove();
+          // inject new content
+          slideDown();
+        });
+        */
       }else{
         slideDown();
       }
@@ -272,6 +282,13 @@
         }
       }, 200);
     });
+
+
+    $.stellar({
+      horizontalScrolling: false,
+      verticalOffset: 40
+    });
+
 
   });
 })();

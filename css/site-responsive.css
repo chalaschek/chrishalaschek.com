@@ -19,7 +19,7 @@
 
 @media (max-width: 979px) { 
   .section-me{
-    top: 15%;
+    /*top: 15%;*/
   }
 
   .section-me .title{
@@ -41,6 +41,12 @@
     /*width: 50%;*/
   }
   
+  .projects-spacer{
+    height: 250px;
+  }
+
+
+
 
   .project-thesis img{
     top: 35px;
@@ -57,6 +63,11 @@
   .project-rpt img{
     top: 30px;
   }
+
+/*.projects-spacer.catan{
+  background-image: url(../img/catan-narrow2.png);
+}*/
+
 
 }
 
@@ -83,11 +94,16 @@
     padding-right: 20px;
   }
 
+  .arrow-wrap{
+    width: 100%;
+  }
 
   .section-projects .projects-content{
     padding-left: 0px;
     padding-right: 0px;
   }
+
+
 
 
   .section{
@@ -96,7 +112,7 @@
   }
 
   .section-me{
-    top: 20%;
+    /*top: 20%;*/
     padding-bottom: 80px;
   }
 
@@ -154,10 +170,20 @@
   .section-me{
     top: 0px;
     padding-bottom: 40px;
+    padding-top: 0px;
+  }
+
+  .splash-wrap .container{
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   .section .title{
     font-size:38px;
     line-height:38px;
+  }
+
+  .projects-spacer{
+    height: 100px;
   }
 
   .social {
@@ -165,6 +191,10 @@
     width: 40px;
     height: 40px;
     background-image: url('../img/social-icons-small.png');
+  }
+
+  .arrow-wrap{
+    display: none;
   }
 
   .social.twitter{

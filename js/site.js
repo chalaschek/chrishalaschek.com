@@ -13,57 +13,104 @@
       return $(window).width() <= 480;
     }
 
-
-
-    $(window).scroll(function(){
-      console.log("--" + $(this).scrollTop());
-      console.log();
-      
-      if($(this).scrollTop() > $(".section-pubs").position().top + parseInt($(".section-pubs").css("padding-top").replace("px", "")) ){
-        $(".section-pubs .title").css({position: "fixed", top: 0, width: "inherit", background: "#fff", "padding-top": 10});
-      }else{
-        $(".section-pubs .title").css({position: "relative", top: 0});
-      }
-    });
-
-    
-    var updatePos = function () {
-      var el = $(".me-wrap");
-      var width = $(window).width();
-      var height = $(window).height();
-      var left = Math.max(0, (width / 2) - (el.width() / 2)) + "px";
-      var top = Math.max(0, (height / 2) - (el.height() / 2)) + "px";
-      el.css("position","fixed").css("left", left).css("top", top);
-      //el.css({"padding-top": height/2});
-    }; 
-
-    $(window).resize(updatePos);
-    updatePos();
-
-
-    $(".section-pubs").css({"padding-top" : ($(window).height()-$(".section-projects").height())/2});
-
-
-
-
-    // handle info hover for projects
-    if(!isSingleColumnView()){
-      $(".project").hover(function(){
-        var el = $(this);
-        el.find(".info").fadeIn();
-        // auto fade out if touch enabled
-        if(Modernizr.touch){
-          setTimeout(function(){
-            el.find(".info").fadeOut();
-          }, 2000);
-        }
-        //el.find(".info").css("display", "block");
-      }, function(){
-        var el = $(this);
-        el.find(".info").fadeOut();
-      });
+    function isTouch(){
+      //return true;
+      return Modernizr.touch;
     }
 
+    function scrollTo(target, center){
+      var pos = target.position().top;
+      if(center){
+        pos -= Math.max(0, ($(window).height() - target.outerHeight())/2);
+      }
+      $.scrollTo(pos, {
+        duration: 2000,
+        easing: "easeOutExpo",
+        axis: "y"
+      });    
+    }
+
+
+    function initArrows(){
+      if(isTouch()){
+        $(".arrow-wrap").hide();
+      }else{
+        $(".section-me .arrow").tap(function(){
+          scrollTo($(".section-projects"), true);
+        });
+
+        $(".section-projects .arrow").tap(function(){
+          scrollTo($(".section-pubs"));
+        });
+
+      }
+    }
+
+
+    function initParallax(){
+      // strip if touch
+      if(isTouch()){
+        $(".page-wrap").removeClass(".page-wrap");
+        $(".catan").addClass("catan-touch");
+      }else{
+        $(window).scroll(function(){
+          var pubs = $(".section-pubs");
+          var pubsOffsetTop = pubs.position().top + (pubs.outerHeight()-pubs.height())/2;
+
+          if($(this).scrollTop() > pubsOffsetTop ){
+            $(".section-pubs .title").addClass("stick-top");
+          }else{
+            $(".section-pubs .title").removeClass("stick-top");
+          }
+        });
+
+        $.stellar({
+          horizontalScrolling: false,
+          verticalOffset: 40
+        });
+      }
+    }
+
+
+    function initSplashCentering(){
+      var updatePos = function () {
+        var el = $(".splash-wrap");
+        var width = $(window).width();
+        var height = $(window).height();
+        var left = Math.max(0, (width / 2) - (el.width() / 2)) + "px";
+        var top = Math.max(0, (height / 2) - (el.outerHeight() / 2)) + "px";
+
+        var position = isTouch()? "relative" : "fixed"
+
+        el.css("position",position).css("left", left).css("top", top);
+        el.attr("data-top", top);
+      }; 
+
+      $(window).resize(updatePos);
+      updatePos();
+    }
+    
+
+
+    function initProjectHovers(){
+      // handle info hover for projects
+      if(!isSingleColumnView()){
+        $(".project").hover(function(){
+          var el = $(this);
+          el.find(".info").fadeIn();
+          // auto fade out if touch enabled
+          if(isTouch()){
+            setTimeout(function(){
+              el.find(".info").fadeOut();
+            }, 2000);
+          }
+          //el.find(".info").css("display", "block");
+        }, function(){
+          var el = $(this);
+          el.find(".info").fadeOut();
+        });
+      }
+    }
 
 
     var projects = {
@@ -261,66 +308,70 @@
       return result;
     }
 
+
     function projectClickHandler($el){
       // get project info
-      var id = $el.attr("data-id");
-      if(isSingleColumnView() && $el.hasClass("active")){
-        $(".active-project[data-id='active-" + id + "']").slideUp(function(){
-          $el.removeClass("active");
-          $(this).remove();
-        });
-        return;
-      }else if ($el.hasClass("active")){
-        return;
-      }
-
-      if(!isSingleColumnView()){
-        $(".project").removeClass("active");
-      }
-      
-      $el.addClass("active");
-
-      if(isSingleColumnView()){
-        wrapper = createActiveWrapper(id, $el);
-      }else{
-        var wrapper = $(".active-project");
-        if(!wrapper.exists()){
-          wrapper = createActiveWrapper(id, $(".projects"));
+        var id = $el.attr("data-id");
+        if(isSingleColumnView() && $el.hasClass("active")){
+          $(".active-project[data-id='active-" + id + "']").slideUp(function(){
+            $el.removeClass("active");
+            $(this).remove();
+          });
+          return;
+        }else if ($el.hasClass("active")){
+          return;
         }
-      }
 
-      showProjectDetails(wrapper, id);
+        if(!isSingleColumnView()){
+          $(".project").removeClass("active");
+        }
+        
+        $el.addClass("active");
+
+        if(isSingleColumnView()){
+          wrapper = createActiveWrapper(id, $el);
+        }else{
+          var wrapper = $(".active-project");
+          if(!wrapper.exists()){
+            wrapper = createActiveWrapper(id, $(".projects"));
+          }
+        }
+
+        showProjectDetails(wrapper, id);
     }
 
-    $(".project").tap(function(){
-      projectClickHandler($(this));
-    });
+    function initProjectDetailsHandler(){
+      $(".project").tap(function(){
+        projectClickHandler($(this));
+      });
 
-    // handle window resize event
-    var resizeTime = null;
-    $(window).resize(function(){
-      if(resizeTime){
-        clearTimeout(resizeTime);
-      }
-      var active = $(".project.active");
-      if(active.exists()){
-        $(".active-project").remove();
-      }
-
-      resizeTime = setTimeout(function(){
-        if(active.exists()){
-          resetDetails();
-          projectClickHandler(active);
+      // handle window resize event
+      var resizeTime = null;
+      $(window).resize(function(){
+        if(resizeTime){
+          clearTimeout(resizeTime);
         }
-      }, 200);
-    });
+        var active = $(".project.active");
+        if(active.exists()){
+          $(".active-project").remove();
+        }
+
+        resizeTime = setTimeout(function(){
+          if(active.exists()){
+            resetDetails();
+            projectClickHandler(active);
+          }
+        }, 200);
+      });
+    }
 
 
-    $.stellar({
-      horizontalScrolling: false,
-      verticalOffset: 40
-    });
-
+    initParallax();
+    
+    initSplashCentering();
+    initProjectDetailsHandler();
+    initArrows();
+    initProjectHovers();
 
   });
 })();

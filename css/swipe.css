@@ -7,6 +7,10 @@
 .swipe-wrap {
   overflow: hidden;
   position: relative;
+
+  /* fix for chrome and safari flicker */
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;    
 }
 .swipe-wrap > figure {
   float:left;

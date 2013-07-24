@@ -71,31 +71,11 @@ html, body {
   background-position: 50% 0px;
   background-size: cover;
   background-repeat: no-repeat;
-
-  /*background-image: url(../img/golden-gate-bridge-night.jpg);*/
-  /*background-image: url(../img/leather-boardgame.png);*/
-  /*background-image: url(../img/catan-wood.jpg);*/
-  
-  
-  
-  background-image: url(../img/catan-large.jpg);
-  background-image: url(../img/IMG_7343.jpg);
-  background-image: url(../img/catan-clay.jpg);
-  background-image: url(../img/catan-leather.jpg);
-
-  background-image: url(../img/dominoes.jpg);
   background-image: url(../img/board.jpg);
   
 }
 
-
 .projects-spacer.catan{
-  /*background-image: url(../img/computer-circuit.jpg);*/
-  /*background-image: url(../img/catan-leather.jpg);*/
-  background-image: url(../img/catan-clay.jpg);
-  background-image: url(../img/appleII.jpg);
-  background-image: url(../img/circuits-printed-circuit-board-marking-the-track-close-1975959.jpg);
-  background-image: url(../img/board.jpg);
   background-image: url(../img/dominoes.jpg);
   
 }

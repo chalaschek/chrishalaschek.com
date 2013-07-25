@@ -8028,6 +8028,10 @@ html, body {
     background-position: -160px 0px;
   }
 
+  .section-projects{
+    border-bottom: 2px solid #333;
+  }
+
 
   .project{
     width: 100%;

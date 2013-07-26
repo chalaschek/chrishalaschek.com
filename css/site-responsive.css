@@ -178,12 +178,13 @@
   }
 
   .splash-wrap .container{
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   .section .title{
     font-size:38px;
     line-height:38px;
+    margin-bottom: 10px;
   }
 
   .projects-spacer{

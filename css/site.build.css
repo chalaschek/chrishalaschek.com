@@ -7988,13 +7988,18 @@ html, body {
     padding-top: 0px;
   }
 
+  .section-projects{
+    border-bottom: 2px solid #F0FFFF;
+  }
+
   .splash-wrap .container{
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   .section .title{
     font-size:38px;
     line-height:38px;
+    margin-bottom: 10px;
   }
 
   .projects-spacer{

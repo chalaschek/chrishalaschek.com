@@ -292,19 +292,37 @@
 
       // check if there is already a section
       if(wrapper.hasClass("open")){
+        var project = projects[projectId];
         // init new content
-        var newDetails  = $(template(projects[projectId]));
+        var newDetails  = $(template(project));
         // inject the new overview
         wrapper.find(".overview").replaceWith(newDetails.find(".overview"));
-        // force the wrapper height
-        wrapper.css("height", wrapper.height());
+
+        if(!project.images || project.images.length == 0){
+          wrapper.find("#slider").remove();
+          wrapper.find("nav").remove();
+          return;
+        }
+
+        var prevImages = wrapper.find("#slider").exists();
+
+        // only make height sticky if there are alrady images
         var sliderHeight = $("#slider").height();
+        if(prevImages){
+          // force the wrapper height
+          wrapper.css("height", wrapper.height());
+        }
+
         // inject the new slider
-        wrapper.find("#slider").replaceWith(newDetails.find("#slider"));
-        // force the height
-        wrapper.find("#slider").height(sliderHeight);
-        // inject new nav
-        wrapper.find("nav").replaceWith(newDetails.find("nav"));
+        wrapper.find("#slider").remove();
+        wrapper.find("nav").remove();
+
+        var details = wrapper.find(".details");
+        details.append(newDetails.find("#slider"));
+        if(prevImages){
+          wrapper.find("#slider").height(sliderHeight);
+        }
+        details.append(newDetails.find("nav"));
         // mask it all
         maskCarousel(wrapper);
         // init the carousel

@@ -231,7 +231,7 @@
         var bullets = parent.find("#position li");
         window.mySwipe = Swipe(slider[0], {
           continuous: true,
-          auto: 3000,
+          auto: 5000,
           callback: function(pos) {
             setTimeout(function(){
               bullets.removeClass("on");

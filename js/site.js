@@ -231,7 +231,7 @@
         var bullets = parent.find("#position li");
         window.mySwipe = Swipe(slider[0], {
           continuous: true,
-          auto: 3000,
+          auto: 5000,
           callback: function(pos) {
             setTimeout(function(){
               bullets.removeClass("on");
@@ -401,13 +401,24 @@
       });
     }
 
+    function initAnalytics(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-42462226-1', 'chrishalaschek.com');
+      ga('send', 'pageview');
+    }
+
+
 
     initParallax();
     initSplashCentering();
     initProjectDetailsHandler();
     initArrows();
     initProjectHovers();
-
+    initAnalytics();
   });
 })();
 

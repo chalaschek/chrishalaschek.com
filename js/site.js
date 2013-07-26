@@ -79,7 +79,6 @@
         var height = $(window).height();
         var left = Math.max(0, (width / 2) - (el.width() / 2)) + "px";
         var top = Math.max(0, (height / 2) - (el.outerHeight() / 2)) + "px";
-
         var position = isTouch()? "relative" : "fixed"
 
         el.css("position",position).css("left", left).css("top", top);
@@ -173,28 +172,30 @@
 
     var projectTemplate = "" + 
         "<div class=\"details\">" + 
-        "  <div class=\"name\"><%=name%></div>" +
-        "  <div class=\"entry\">" +
-        "    <div class=\"header\">What:</div>" +
-        "    <div class=\"value\"><%=what%></div>" +
-        "  </div>" +
-        "  <div class=\"entry\">" +
-        "    <div class=\"header\">Role:</div>" +
-        "    <div class=\"value\"><%=role%></div>" +
-        "  </div>" +
-        "  <div class=\"entry\">" +
-        "    <div class=\"header\">Tech:</div>" +
-        "    <div class=\"value\"><%=tech%></div>" +
-        "  </div>" +
-        "  <div class=\"entry\">" +
-        "    <div class=\"header\">Status:</div>" +
-        "    <div class=\"value\">" +
-        "    <%if(typeof link !='undefined'){%>" + 
-        "       <a href='<%=link%>' target='_blank'><%=status%></a>" + 
-        "    <%}else{%>" +
-        "     <%=status%>" +
-        "    <%}%>" +
-        "      </div>" +
+        "  <div class=\"overview\">" +
+        "    <div class=\"name\"><%=name%></div>" +
+        "    <div class=\"entry\">" +
+        "      <div class=\"header\">What:</div>" +
+        "      <div class=\"value\"><%=what%></div>" +
+        "    </div>" +
+        "    <div class=\"entry\">" +
+        "      <div class=\"header\">Role:</div>" +
+        "      <div class=\"value\"><%=role%></div>" +
+        "    </div>" +
+        "    <div class=\"entry\">" +
+        "      <div class=\"header\">Tech:</div>" +
+        "      <div class=\"value\"><%=tech%></div>" +
+        "    </div>" +
+        "    <div class=\"entry\">" +
+        "      <div class=\"header\">Status:</div>" +
+        "      <div class=\"value\">" +
+        "      <%if(typeof link !='undefined'){%>" + 
+        "         <a href='<%=link%>' target='_blank'><%=status%></a>" + 
+        "      <%}else{%>" +
+        "       <%=status%>" +
+        "      <%}%>" +
+        "        </div>" +
+        "    </div>" +
         "  </div>" +
         "  <%if(typeof images !='undefined' && images.length > 0){%>" +
         "  <div id='slider' class='swipe'>" +
@@ -255,6 +256,10 @@
       function slideDown(){
         wrapper.addClass("open");
         var newDetails  = $(template(projects[projectId]));
+
+        // mask the carousel
+        maskCarousel(newDetails);
+        
         wrapper.append( newDetails );
         wrapper.slideDown(slideDuration, function(){});
         setTimeout(function(){
@@ -262,35 +267,48 @@
         }, 100);
       }
 
+      function maskCarousel(wrapper, callback){
+        wrapper.find("figure,nav").hide();
+        var loading = $("<div class='loading-spacer'></div><div class='loading center'><img src='./img/spinner.gif'/>Loading screenshots...</div>");
+        wrapper.find("#slider").append(loading);
+        // mask until images are loaded
+        var s = Date.now();
+
+        $("#slider").imagesLoaded(function(){
+          // delay for at min time
+          var delay = 750-(Date.now()-s);
+          setTimeout(function(){
+            wrapper.find("#slider,figure,nav").fadeIn();
+            loading.remove();
+            wrapper.css({"height": "auto"});
+            wrapper.find("#slider").css({"height": "auto"});
+            if(callback)
+              callback();
+          }, delay);
+          
+        });
+      }
+
+
       // check if there is already a section
       if(wrapper.hasClass("open")){
-
         // init new content
         var newDetails  = $(template(projects[projectId]));
-        newDetails.hide();
-        // force height
-        var height = wrapper.height();
-        //wrapper.height(height);
-        wrapper.css({height: "auto"});
-        var childs = wrapper.children();
-        // remove old content
-        childs.fadeOut(fadeDuration, function(){
-          childs.remove();
-          // inject new content
-          wrapper.append( newDetails );
-          // fade in new content
-          newDetails.fadeIn(fadeDuration, function(){});
-          // init carousel
-          initCarousel(newDetails);
-        });
-
-        /*
-        wrapper.slideUp(slideDuration, function(){
-          wrapper.children().remove();
-          // inject new content
-          slideDown();
-        });
-        */
+        // inject the new overview
+        wrapper.find(".overview").replaceWith(newDetails.find(".overview"));
+        // force the wrapper height
+        wrapper.css("height", wrapper.height());
+        var sliderHeight = $("#slider").height();
+        // inject the new slider
+        wrapper.find("#slider").replaceWith(newDetails.find("#slider"));
+        // force the height
+        wrapper.find("#slider").height(sliderHeight);
+        // inject new nav
+        wrapper.find("nav").replaceWith(newDetails.find("nav"));
+        // mask it all
+        maskCarousel(wrapper);
+        // init the carousel
+        initCarousel(wrapper);
       }else{
         slideDown();
       }
@@ -367,7 +385,6 @@
 
 
     initParallax();
-    
     initSplashCentering();
     initProjectDetailsHandler();
     initArrows();

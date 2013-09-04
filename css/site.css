@@ -1,25 +1,18 @@
+
 @font-face {
-  font-family: 'Fauna One';
+  font-family: 'Montserrat Alternates';
   font-style: normal;
   font-weight: 400;
-  src: local('Fauna One'), local('FaunaOne-Regular'), url(http://themes.googleusercontent.com/static/fonts/faunaone/v1/cSd7NBXNFQWK4oX1706dY7O3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+  src: local('MontserratAlternates-Regular'), url(http://themes.googleusercontent.com/static/fonts/montserratalternates/v1/z2n1Sjxk9souK3HCtdHukkgzB8lONmAFCo-7kcqDvBSglnMp3_3A8V8Ai8YosRtX.woff) format('woff');
 }
 
 
 @font-face {
-  font-family: 'Bigshot One';
+  font-family: 'Roboto';
   font-style: normal;
-  font-weight: 400;
-  src: local('Bigshot One'), local('BigshotOne'), url(http://themes.googleusercontent.com/static/fonts/bigshotone/v3/bWykSiy19zUrP0LR0jRzqrrIa-7acMAeDBVuclsi6Gc.woff) format('woff');
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(http://themes.googleusercontent.com/static/fonts/roboto/v9/Hgo13k-tfSpn0qi1SFdUfbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
 }
-
-@font-face {
-  font-family: 'Mr Dafoe';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Mr Dafoe Regular'), local('MrDafoe-Regular'), url(http://themes.googleusercontent.com/static/fonts/mrdafoe/v2/F1AgEicuA-Vh7KAhE4UhjXYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
-}
-
 
 * {
   margin: 0;
@@ -29,7 +22,7 @@
 
 html, body {
   height: 100%;
-  font-family: 'Fauna One', "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Roboto', "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
@@ -108,8 +101,9 @@ html, body {
 .section .title{
   color: #333;
   text-align: center;
-  font-family: "Mr Dafoe";
+  /*font-family: "Mr Dafoe";*/
   /*font-family: "Bigshot One";*/
+  font-family: "Montserrat Alternates";
   font-size:40px;
   line-height:50px;
   margin-bottom: 20px;
@@ -476,7 +470,7 @@ html, body {
 
 .footer .copy span{
   position: relative;
-  top: 2px;
+  top: 0px;
 }
 
 

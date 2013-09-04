@@ -163,6 +163,10 @@
     top: 20%;
   }
 
+  .publication-title span{
+    line-height: 25px;
+  }
+
 }
  
 /* Landscape phones and down */

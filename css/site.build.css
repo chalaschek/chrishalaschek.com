@@ -7829,6 +7829,7 @@ html, body {
   padding-top: 10;
 }
 
+
 /* Large desktop */
 @media (min-width: 1200px) {
 
@@ -7991,6 +7992,10 @@ html, body {
   .project-rpt img{
     width: 200px;
     top: 20%;
+  }
+
+  .publication-title span{
+    line-height: 25px;
   }
 
 }

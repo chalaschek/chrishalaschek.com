@@ -7761,7 +7761,6 @@ html, body {
   padding-top: 10;
 }
 
-
 /* Large desktop */
 @media (min-width: 1200px) {
 
@@ -7786,8 +7785,8 @@ html, body {
   }
 
   .section-me .title{
-    font-size:50px;
-    line-height:50px;
+    font-size:45px;
+    line-height:45px;
   }
 
 
@@ -7945,8 +7944,8 @@ html, body {
     padding-bottom: 20px;
   }
   .section .title{
-    font-size:38px;
-    line-height:38px;
+    font-size:30px;
+    line-height:35px;
     margin-bottom: 10px;
   }
 
@@ -7979,6 +7978,10 @@ html, body {
 
   .social.cv{
     background-position: -160px 0px;
+  }
+
+  .section-projects{
+    border-bottom: 2px solid #F0FFFF;
   }
 
 

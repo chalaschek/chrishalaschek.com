@@ -118,8 +118,8 @@
         what: "iOS &amp; Android game to attack/defend things trending on Twitter",
         role: "Tech Lead (CTO &amp; Co-Founder @ <a href='http://hashgo.com' target='_blank'>HashGo</a>)",
         tech: "Unity3D, Node.js, Redis, MongoDB, AWS",
-        status: "Launching August 2013",
-        link: "http://trendwars.com",
+        status: "Live",
+        link: "http://bit.ly/160oQ2f",
         images: ["./img/trendwars/tw1.jpg", "./img/trendwars/tw2.jpg", "./img/trendwars/tw3.jpg", "./img/trendwars/tw4.jpg", "./img/trendwars/tw5.jpg"]
       },
 

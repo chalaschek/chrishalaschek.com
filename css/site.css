@@ -89,7 +89,8 @@ html, body {
 
 .projects-spacer.catan{
   background-image: url(../img/dominoes.jpg);
-  
+  background-attachment: scroll;
+  background-repeat: repeat;
 }
 
 

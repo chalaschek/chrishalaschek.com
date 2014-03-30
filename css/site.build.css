@@ -1,3 +1,13 @@
+/*!
+ * Bootstrap v2.3.2
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
 .clearfix {
   *zoom: 1;
 }
@@ -6156,6 +6166,15 @@ a.badge:focus {
   position: fixed;
 }
 
+/*!
+ * Bootstrap Responsive v2.3.2
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
 
 .clearfix {
   *zoom: 1;
@@ -7256,6 +7275,8 @@ a.badge:focus {
     overflow: visible !important;
   }
 }
+
+/* Swipe 2 required styles */
 .swipe {
   overflow: hidden;
   visibility: hidden;
@@ -7345,6 +7366,7 @@ nav #position li.on {
     max-height: 400px;
   }
 }
+
 
 @font-face {
   font-family: 'Montserrat Alternates';
@@ -7676,6 +7698,16 @@ html, body {
   background-color: #ffcc66;
 }
 
+.project-voxa{
+  background-color: #353535;
+}
+
+.project-voxa img{
+  width: 90%;
+  position: relative;
+  top: 50px;
+}
+
 
 .project-trendwars img{
   width: 90%;
@@ -7964,7 +7996,10 @@ html, body {
   }
 
 
-
+  .project-voxa img{
+    width: 65%;
+    top: 25%;
+  }
 
   .project-trendwars img{
     width: 65%;
@@ -8063,6 +8098,13 @@ html, body {
     width: 100%;
   }
 
+  .project-voxa img{
+    width: 65%;
+    top: 20%;
+  }
+
+
+
   .project-trendwars img{
     width: 65%;
     top: 20%;
@@ -8149,3 +8191,4 @@ html, body {
     background-position: -160px 0px;
   }
 }
+

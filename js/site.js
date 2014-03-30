@@ -113,6 +113,17 @@
 
 
     var projects = {
+      voxa: {
+        name: "Voxa",
+        what: "Intelligent integration for e-mail to CRM",
+        role: "Tech Lead (CTO &amp; Co-Founder @ <a href='http://voxa.com' target='_blank'>Voxa</a>)",
+        tech: "Backbone.js, Websockets, Node.js, Redis, MongoDB, AWS",
+        status: "Live",
+        link: "http://bit.ly/1fa9TUq",
+        images: ["./img/voxa/voxa1.png", "./img/voxa/voxa2.png", "./img/voxa/voxa3.png"]
+      },
+
+
       trendwars: {
         name: "Trend Wars",
         what: "iOS &amp; Android game to attack/defend things trending on Twitter",

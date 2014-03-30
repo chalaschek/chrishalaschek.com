@@ -132,7 +132,10 @@
   }
 
 
-
+  .project-voxa img{
+    width: 65%;
+    top: 25%;
+  }
 
   .project-trendwars img{
     width: 65%;
@@ -230,6 +233,13 @@
   .project{
     width: 100%;
   }
+
+  .project-voxa img{
+    width: 65%;
+    top: 20%;
+  }
+
+
 
   .project-trendwars img{
     width: 65%;

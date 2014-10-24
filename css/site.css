@@ -83,8 +83,8 @@ html, body {
   background-position: 50% 0px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(../img/board.jpg);
-  
+  /*background-image: url(../img/board.jpg);*/
+  background-color: #27ae60;
 }
 
 .projects-spacer.catan{

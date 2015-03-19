@@ -7452,7 +7452,8 @@ html, body {
   background-position: 50% 0px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(../img/board.jpg);
+  /*background-image: url(../img/board.jpg);*/
+  background-image: url(../img/board2.png);
 }
 
 .projects-spacer.catan{
@@ -7540,7 +7541,7 @@ html, body {
   left: 0;
   z-index: 10;
   overflow: visible;
-  background-color: rgba(0,0,0,.8);
+  /*background-color: rgba(0,0,0,.8);*/
 
   
 }

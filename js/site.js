@@ -115,12 +115,12 @@
     var projects = {
       voxa: {
         name: "Voxa",
-        what: "Intelligent integration for e-mail to CRM",
-        role: "Tech Lead (CTO &amp; Co-Founder @ <a href='http://voxa.com' target='_blank'>Voxa</a>)",
+        what: "Enterprise Email Intelligence",
+        role: "Tech Lead (CTO @ <a href='http://voxa.com' target='_blank'>Voxa</a>)",
         tech: "Backbone.js, Websockets, Node.js, Redis, MongoDB, AWS",
         status: "Live",
         link: "http://bit.ly/1fa9TUq",
-        images: ["./img/voxa/voxa1.png", "./img/voxa/voxa2.png", "./img/voxa/voxa3.png"]
+        images: ["./img/voxa/voxa-1.png", "./img/voxa/voxa-2.png", "./img/voxa/voxa-3.png", "./img/voxa/voxa-4.png"]
       },
 
 
@@ -193,10 +193,10 @@
         "      <div class=\"header\">Role:</div>" +
         "      <div class=\"value\"><%=role%></div>" +
         "    </div>" +
-        "    <div class=\"entry\">" +
-        "      <div class=\"header\">Tech:</div>" +
-        "      <div class=\"value\"><%=tech%></div>" +
-        "    </div>" +
+        // "    <div class=\"entry\">" +
+        // "      <div class=\"header\">Tech:</div>" +
+        // "      <div class=\"value\"><%=tech%></div>" +
+        // "    </div>" +
         "    <div class=\"entry\">" +
         "      <div class=\"header\">Status:</div>" +
         "      <div class=\"value\">" +

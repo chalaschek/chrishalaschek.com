@@ -84,11 +84,12 @@ html, body {
   background-size: cover;
   background-repeat: no-repeat;
   /*background-image: url(../img/board.jpg);*/
-  background-color: #27ae60;
+  background-image: url(../img/board3.jpg);
 }
 
 .projects-spacer.catan{
   background-image: url(../img/dominoes.jpg);
+  /*background-color: #4183D7;*/
   background-attachment: scroll;
   background-repeat: repeat;
 }
@@ -118,15 +119,22 @@ html, body {
 }
 
 .arrow-wrap .arrow{
-  background: transparent url(../img/single-blue-arrow.png) no-repeat 0 0;
+  /*background: transparent url(../img/single-blue-arrow.png) no-repeat 0 0;*/
+  background: transparent url(../img/arrow-light.png) no-repeat 0 0;
+  top: -15px;
   display: block;
-  width: 42px;
-  height: 46px;
+  width: 50px;
+  height: 50px;
   text-indent: -9999px;
   overflow: hidden;
   position: relative;
   margin: 0 auto;
   cursor: pointer;
+}
+
+.section-projects .arrow-wrap .arrow{
+  background: transparent url(../img/arrow-dark.png) no-repeat 0 0;
+  margin-bottom: 40px;
 }
 
 .arrow-wrap .arrow:hover{
@@ -136,7 +144,9 @@ html, body {
 
 
 .section-me{
-  background-color: #f6f6f6;
+  background-color: #000;
+  /*background-color: #f6f6f6;*/
+  /*background-color: #4183D7;*/
   border-bottom: 1px solid #D9D9D9;
   padding-top: 0;
   padding-bottom: 0px;
@@ -162,8 +172,8 @@ html, body {
   left: 0;
   z-index: 10;
   overflow: visible;
-  /*background-color: #fff;*/
-  background-color: rgba(0,0,0,.8);
+  /*background-color: rgba(0,0,0,.8);*/
+
   
 }
 
@@ -330,13 +340,14 @@ html, body {
 }
 
 .project-voxa{
-  background-color: #353535;
+  /*background-color: #353535;*/
+  background-color: whitesmoke;
 }
 
 .project-voxa img{
   width: 90%;
   position: relative;
-  top: 50px;
+  top: 78px;
 }
 
 
@@ -492,3 +503,334 @@ html, body {
   background: #fff;
   padding-top: 10;
 }
+
+
+/* Large desktop */
+@media (min-width: 1200px) {
+
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (max-width: 1199px) { 
+  .project{
+    height: 180px;
+  }
+
+  .project-odr img{
+    top: 18px;
+  }
+
+
+}
+
+@media (max-width: 979px) { 
+  .section-me{
+    /*top: 15%;*/
+  }
+
+  .section-me .title{
+    font-size:45px;
+    line-height:45px;
+  }
+
+
+  .container.projects-content .span8 {
+    width: 620px;
+  }
+
+  .projects-content .offset2{
+    margin-left: 70px;
+  }
+
+  .project{
+    height: 180px;
+    /*width: 50%;*/
+  }
+  
+  .projects-spacer{
+    height: 250px;
+  }
+
+
+
+
+  .project-thesis img{
+    top: 35px;
+  }
+
+  .project-sideplay img{
+    top: 15px;
+  }
+
+  .project-odr img{
+    top: 18px;
+  }
+
+  .project-rpt img{
+    top: 30px;
+  }
+
+/*.projects-spacer.catan{
+  background-image: url(../img/catan-narrow2.png);
+}*/
+
+
+}
+
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+  html, body{
+    font-size: 14px;
+    line-height: 16px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .container.projects-content .span8 {
+    width: 100%;
+  }
+
+  .projects-content .offset2{
+    margin-left: 0;
+  }
+
+  .container{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .arrow-wrap{
+    width: 100%;
+  }
+
+  .section-projects .projects-content{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+
+
+
+  .section{
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .section-me{
+    /*top: 20%;*/
+    padding-bottom: 80px;
+  }
+
+
+  .section-projects .title{
+    padding-bottom: 20px;
+  }
+
+  .section-projects{
+    padding-bottom: 0px;
+  }
+
+
+  .project{
+    height: 180px;
+    width: 50%;
+  }
+
+
+  .project-voxa img{
+    width: 65%;
+    top: 25%;
+  }
+
+  .project-trendwars img{
+    width: 65%;
+    top: 30%;
+  }
+
+
+  .project-clados img{
+    width: 80%;
+  }
+
+  .project-thesis img{
+    width: 120px;
+    top: 20%;
+  }
+
+
+  .project-sideplay img{
+    top: 15px;
+  }
+
+  .project-odr img{
+    height: 90%;
+  }
+
+  .project-rpt img{
+    width: 200px;
+    top: 20%;
+  }
+
+  .publication-title span{
+    line-height: 25px;
+  }
+
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .section-me{
+    top: 0px;
+    padding-bottom: 40px;
+    padding-top: 0px;
+  }
+
+  .section-projects{
+    border-bottom: 2px solid #F0FFFF;
+  }
+
+  .splash-wrap .container{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .section .title{
+    font-size:30px;
+    line-height:35px;
+    margin-bottom: 10px;
+  }
+
+  .projects-spacer{
+    height: 100px;
+  }
+
+  .social {
+    margin-top: 10px;
+    width: 40px;
+    height: 40px;
+    background-image: url('../img/social-icons-small.png');
+  }
+
+  .arrow-wrap{
+    display: none;
+  }
+
+  .social.twitter{
+    background-position: -40px 0px;
+  }
+
+  .social.github{
+    background-position: -120px 0px;
+  }
+
+  .social.facebook{
+    background-position: -80px 0px;
+  }
+
+  .social.cv{
+    background-position: -160px 0px;
+  }
+
+  .section-projects{
+    border-bottom: 2px solid #F0FFFF;
+  }
+
+
+  .project{
+    width: 100%;
+  }
+
+  .project-voxa img{
+    width: 65%;
+    top: 20%;
+  }
+
+
+
+  .project-trendwars img{
+    width: 65%;
+    top: 20%;
+  }
+
+
+  .project-clados img{
+    width: 280px;
+  }
+
+  .project-thesis img{
+    width: 120px;
+    top: 20%;
+  }
+
+
+  .project-sideplay img{
+    top: 15px;
+  }
+
+  .project-odr img{
+    height: 90%;
+  }
+
+  .project-rpt img{
+    width: 200px;
+    top: 20%;
+  }
+
+  .active-project{
+    float: left;
+    width: 100%;
+  }
+
+}
+
+
+/* Retina icons */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+ only screen and (-o-min-device-pixel-ratio: 3/2),
+ only screen and (min--moz-device-pixel-ratio: 1.5),
+     only screen and (min-device-pixel-ratio: 1.5) {
+
+  .social {
+    background-image: url('../img/social-icons@2x.png');
+    -moz-background-size:240px 60px;
+    -ie-background-size:240px 60px;
+    -o-background-size:240px 60px;
+    -webkit-background-size:240px 60px;
+    background-size:240px 60px;
+  }
+}
+
+@media only screen and (max-width: 480px),
+ only screen and (-webkit-min-device-pixel-ratio: 1.5),
+ only screen and (-o-min-device-pixel-ratio: 3/2),
+ only screen and (min--moz-device-pixel-ratio: 1.5),
+     only screen and (min-device-pixel-ratio: 1.5) {
+
+  .social {
+    width: 40px;
+    height: 40px;
+    background-image: url('../img/social-icons@2x.png');
+    -moz-background-size:160px 40px;
+    -ie-background-size:160px 40px;
+    -o-background-size:160px 40px;
+    -webkit-background-size:160px 40px;
+    background-size:160px 40px;
+  }
+
+  .social.twitter{
+    background-position: -40px 0px;
+  }
+
+  .social.github{
+    background-position: -120px 0px;
+  }
+
+  .social.facebook{
+    background-position: -80px 0px;
+  }
+
+  .social.cv{
+    background-position: -160px 0px;
+  }
+}
+
